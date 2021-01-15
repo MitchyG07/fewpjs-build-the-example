@@ -3,8 +3,21 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+addEventListeners()
+//fetch fake server 
+function addEventListeners() {
+  likeButton = document.querySelector('.like-glyph')
+  likeButton.addEventListener('click', ServerCall)
+}
 
-
+function ServerCall() {
+  mimicServerCall()
+  .then(console.log)
+  .catch(error => {
+    console.log(error)
+    document.querySelector('.hidden').remove() 
+  })
+}
 
 
 //------------------------------------------------------------------------------
